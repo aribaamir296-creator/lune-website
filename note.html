@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>For Someone, Someday | Leave a Note | Luné</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="page-note">
+  <div class="page-shell">
+    <header class="site-header">
+      <div class="brand">
+        <span class="logo-mark">L</span>
+        <span class="brand-name">Luné</span>
+      </div>
+      <nav class="site-nav" aria-label="Primary navigation">
+        <button class="nav-toggle" aria-expanded="false" aria-controls="nav-links">Menu</button>
+        <ul id="nav-links" class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="moments.html">Moments</a></li>
+          <li><a href="rituals.html">Rituals</a></li>
+          <li><a href="archive.html">Archive</a></li>
+          <li><a href="note.html" class="active">Leave a Note</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section class="page-header">
+        <span class="eyebrow">For Someone, Someday</span>
+        <h1>Leave a quiet note for later.</h1>
+        <p class="page-text">A simple space to hold a small message, written with care and left unhurried.</p>
+      </section>
+
+      <section class="note-section">
+        <div class="note-card">
+          <p class="note-intro">Write a small note to keep in this imagined journal. No need to send it anywhere yet.</p>
+          <form class="note-form" novalidate>
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" placeholder="Your name" />
+
+            <label for="for-select">For</label>
+            <select id="for-select" name="for">
+              <option>Someone</option>
+              <option>Myself</option>
+              <option>Anyone</option>
+            </select>
+
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="6" placeholder="A small thought, memory, or wish."></textarea>
+
+            <button type="submit" class="button button-secondary">Save the Note</button>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>© Luné • A reflective editorial space for small moments.</p>
+    </footer>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
