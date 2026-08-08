@@ -14,3 +14,12 @@ forms.forEach(form => {
     event.preventDefault();
   });
 });
+
+const bookmarkButtons = document.querySelectorAll('.bookmark-toggle');
+bookmarkButtons.forEach(button => {
+  button.addEventListener('click', () => {
+    const isSaved = button.getAttribute('aria-pressed') === 'true';
+    button.setAttribute('aria-pressed', String(!isSaved));
+    button.querySelector('.bookmark-label').textContent = isSaved ? 'Save' : 'Saved';
+  });
+});
