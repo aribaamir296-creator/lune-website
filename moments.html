@@ -31,6 +31,58 @@
         <h1>Moments that feel soft and held.</h1>
         <p class="page-text">A collection of delicate scenes and quiet moods, each one a small story waiting to be noticed.</p>
       </section>
+      <section class="visual-gallery">
+        <div class="section-intro">
+          <h2>Visual Memory</h2>
+          <p class="page-text">Quiet frames collected here — small scenes that hold a fleeting mood.</p>
+        </div>
+        <div class="gallery-grid">
+          <figure class="memory-card">
+            <img class="memory-thumb" src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=1" alt="Moon over still water" data-large="https://images.unsplash.com/photo-1501785888041-af3ef285b470?q=80&w=2000&auto=format&fit=crop&ixlib=rb-4.0.3&s=1" data-title="Silver Shore" data-caption="A slow moon pulling thought toward the quiet." />
+            <figcaption>
+              <h4>Silver Shore</h4>
+              <p>A slow moon pulling thought toward the quiet.</p>
+            </figcaption>
+            <button type="button" class="bookmark-toggle" aria-pressed="false" aria-label="Save moment"><span class="bookmark-icon">🔖</span><span class="bookmark-label">Save</span></button>
+          </figure>
+
+          <figure class="memory-card">
+            <img class="memory-thumb" src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=2" alt="Rain on windowpane" data-large="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=2000&auto=format&fit=crop&ixlib=rb-4.0.3&s=2" data-title="House of Rain" data-caption="The steady hush of weather as a warm companion." />
+            <figcaption>
+              <h4>House of Rain</h4>
+              <p>The steady hush of weather as a warm companion.</p>
+            </figcaption>
+            <button type="button" class="bookmark-toggle" aria-pressed="false" aria-label="Save moment"><span class="bookmark-icon">🔖</span><span class="bookmark-label">Save</span></button>
+          </figure>
+
+          <figure class="memory-card">
+            <img class="memory-thumb" src="https://images.unsplash.com/photo-1519681393784-d120267933ba?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=3" alt="Pages of an old journal" data-large="https://images.unsplash.com/photo-1519681393784-d120267933ba?q=80&w=2000&auto=format&fit=crop&ixlib=rb-4.0.3&s=3" data-title="Folded Pages" data-caption="Margins keeping small secrets and inked maps of thought." />
+            <figcaption>
+              <h4>Folded Pages</h4>
+              <p>Margins keeping small secrets and inked maps of thought.</p>
+            </figcaption>
+            <button type="button" class="bookmark-toggle" aria-pressed="false" aria-label="Save moment"><span class="bookmark-icon">🔖</span><span class="bookmark-label">Save</span></button>
+          </figure>
+
+          <figure class="memory-card">
+            <img class="memory-thumb" src="https://images.unsplash.com/photo-1500530855697-7c4b1a2a1b7f?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=4" alt="Quiet interior with plant" data-large="https://images.unsplash.com/photo-1500530855697-7c4b1a2a1b7f?q=80&w=2000&auto=format&fit=crop&ixlib=rb-4.0.3&s=4" data-title="Window Corner" data-caption="A small light and an even smaller feeling of home." />
+            <figcaption>
+              <h4>Window Corner</h4>
+              <p>A small light and an even smaller feeling of home.</p>
+            </figcaption>
+            <button type="button" class="bookmark-toggle" aria-pressed="false" aria-label="Save moment"><span class="bookmark-icon">🔖</span><span class="bookmark-label">Save</span></button>
+          </figure>
+
+          <figure class="memory-card">
+            <img class="memory-thumb" src="https://images.unsplash.com/photo-1501785888041-1c3a37d3d8f2?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=5" alt="Soft moonlight on trees" data-large="https://images.unsplash.com/photo-1501785888041-1c3a37d3d8f2?q=80&w=2000&auto=format&fit=crop&ixlib=rb-4.0.3&s=5" data-title="Night Grove" data-caption="Leaves murmuring under a careful light." />
+            <figcaption>
+              <h4>Night Grove</h4>
+              <p>Leaves murmuring under a careful light.</p>
+            </figcaption>
+            <button type="button" class="bookmark-toggle" aria-pressed="false" aria-label="Save moment"><span class="bookmark-icon">🔖</span><span class="bookmark-label">Save</span></button>
+          </figure>
+        </div>
+      </section>
 
       <section class="card-section">
         <div class="moment-grid moment-grid-2">
@@ -91,5 +143,15 @@
     </footer>
   </div>
   <script src="script.js"></script>
+  <div id="lightbox" class="lightbox" aria-hidden="true">
+    <div class="lightbox-inner" role="dialog" aria-modal="true">
+      <button class="lightbox-close" aria-label="Close">×</button>
+      <img class="lightbox-img" src="" alt="" />
+      <div class="lightbox-caption">
+        <h3></h3>
+        <p></p>
+      </div>
+    </div>
+  </div>
 </body>
 </html>

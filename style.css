@@ -252,6 +252,45 @@ p {
   z-index: 1;
 }
 
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+..hero-actions .button-secondary {
+  border-color: rgba(92, 112, 96, 0.2);
+}
+
+.weather-card {
+  cursor: default;
+  transition: transform 0.25s ease, border-color 0.25s ease, background 0.25s ease, box-shadow 0.25s ease;
+}
+
+.weather-card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(63, 111, 79, 0.28);
+}
+
+.weather-card .label {
+  display: inline-block;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 0.78rem;
+  color: rgba(63, 111, 79, 0.92);
+  margin-bottom: 10px;
+}
+
+.weather-card.pulse {
+  animation: pulseHighlight 0.6s ease;
+}
+
+@keyframes pulseHighlight {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(63, 111, 79, 0.14); }
+  50% { box-shadow: 0 0 0 12px rgba(63, 111, 79, 0.05); }
+}
+
 .hero-brand {
   font-size: 0.95rem;
   letter-spacing: 0.35em;
@@ -301,17 +340,90 @@ p {
   z-index: 1;
 }
 
-.decor-card {
-  position: relative;
-  padding: 34px 30px;
-  background: rgba(250, 244, 235, 0.95);
+.hero-visual,
+.featured-visual,
+.mini-visual,
+.ritual-visual,
+.ritual-thumb,
+.archive-visuals figure,
+.note-image {
+  display: block;
+  border-radius: 20px;
+  overflow: hidden;
   border: 1px solid var(--border);
-  border-radius: 24px;
+  background: rgba(250, 244, 235, 0.95);
   box-shadow: var(--shadow);
-  min-height: 200px;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
+}
+
+.hero-visual img,
+.featured-visual img,
+.mini-visual img,
+.ritual-visual img,
+.ritual-thumb img,
+.archive-visuals img,
+.note-image img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  filter: saturate(0.92) contrast(0.95) brightness(0.96);
+}
+
+.featured-visual,
+.note-image {
+  margin-top: 28px;
+}
+
+.featured-visual figcaption,
+.mini-visual figcaption,
+.ritual-visual figcaption,
+.archive-visuals figcaption,
+.note-image figcaption {
+  padding: 16px 18px 20px;
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.mini-visual,
+.note-image {
+  max-width: 520px;
+}
+
+.ritual-visual {
+  margin: 28px 0 24px;
+}
+
+.ritual-visual img,
+.archive-visuals img,
+.ritual-thumb img {
+  width: 100%;
+}
+
+.ritual-thumb {
+  margin-top: 18px;
+}
+
+.archive-visuals {
+  display: grid;
+  gap: 18px;
+  margin: 24px 0 0;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.archive-visuals figure {
+  margin: 0;
+}
+
+@media (max-width: 960px) {
+  .hero-section,
+  .archive-grid,
+  .moment-grid,
+  .ritual-block {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-visual img { width: 100%; }
 }
 
 .decor-card::before {
@@ -343,6 +455,100 @@ p {
   margin-top: 32px;
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
+
+/* Visual memory gallery */
+.visual-gallery {
+  margin-top: 42px;
+}
+.gallery-grid {
+  display: grid;
+  gap: 18px;
+  margin-top: 18px;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+}
+.memory-card {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  background: rgba(250, 244, 235, 0.95);
+}
+.memory-card img {
+  display: block;
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  filter: saturate(0.92) contrast(0.98);
+}
+.memory-card figcaption {
+  padding: 14px 12px 18px 12px;
+}
+.memory-card h4 {
+  margin: 0;
+  font-size: 1rem;
+}
+.memory-card p {
+  margin: 6px 0 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+.memory-card .bookmark-toggle {
+  top: 12px;
+  right: 12px;
+}
+
+/* Lightbox overlay */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(18,20,16,0.45);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 220ms ease, visibility 220ms ease;
+  z-index: 1200;
+}
+.lightbox.open {
+  opacity: 1;
+  visibility: visible;
+}
+.lightbox-inner {
+  position: relative;
+  width: min(880px, 96%);
+  max-height: 86vh;
+  overflow: auto;
+  background: var(--surface);
+  border-radius: 14px;
+  padding: 18px;
+  box-shadow: var(--shadow);
+  transform: translateY(8px) scale(0.99);
+  transition: transform 220ms ease;
+}
+.lightbox.open .lightbox-inner {
+  transform: translateY(0) scale(1);
+}
+.lightbox-img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 12px;
+}
+.lightbox-close {
+  position: absolute;
+  top: 10px;
+  right: 12px;
+  background: transparent;
+  border: 0;
+  font-size: 1.6rem;
+  line-height: 1;
+  color: var(--text);
+  cursor: pointer;
+}
+.lightbox-caption h3 { margin: 0 0 6px 0; }
+.lightbox-caption p { margin: 0; color: var(--muted); }
 
 .moment-card,
 .archive-card,
@@ -605,6 +811,7 @@ p {
   .ritual-block {
     grid-template-columns: 1fr;
   }
+  .hero-visual img { width: 100%; }
 
   .site-header {
     flex-direction: column;
